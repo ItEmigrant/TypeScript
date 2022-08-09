@@ -12,7 +12,7 @@ export default Accordion;
 
 function AccordionTitle() {
     console.log("AccordionTitle rendering")
-    return <>Menu</>
+    return <><h3>Menu</h3></>
 }
 
 function AccordionBody() {
