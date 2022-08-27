@@ -1,7 +1,25 @@
 .App {
   text-align: center;
 }
+#SQUARE {
+  width: 100px;
+  height: 100px;
+  background: green;
 
+
+
+
+}
+
+#SQUARE1 {
+  width: 100px;
+  height: 100px;
+  background: red;
+
+
+
+
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
