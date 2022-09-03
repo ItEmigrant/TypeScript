@@ -5,6 +5,7 @@ import './App.css';
 import {Rating} from "./components/Rating/Rating";*/
 import {OnOff} from "./components/OnOff/OnOff";
 import {UnAccordion} from "./components/AccSelfContr/UnAccordion";
+import {UnRating} from "./components/UnConrtRating/UnRating";
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
             <OnOff/>
             <UnAccordion titleValue={"Menu"}/>
             <UnAccordion titleValue={"Users"}/>
+            <UnRating/>
 
 
         </div>
