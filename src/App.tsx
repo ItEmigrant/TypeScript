@@ -10,7 +10,7 @@ import {UnRating} from "./components/UnConrtRating/UnRating";
 function App() {
 
     return (
-        <div>
+        <div className={"App1"}>
             {/* <PageTitle title={"This is APP component!"}/>
             <PageTitle title={"My friends!"}/>
             Article 1

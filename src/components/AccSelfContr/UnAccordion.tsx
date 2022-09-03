@@ -12,8 +12,8 @@ export function UnAccordion (props: AccordionPropsType) {
 
         return <div>
             <AccordionTitle title={props.titleValue}/>
-            <button onClick={()=>(setCollapsed(false))}>+</button>
-            <button onClick={()=>(setCollapsed(true))}>-</button>
+            <button onClick={()=>(setCollapsed(!collapsed))}>+</button>
+
             {!collapsed && <AccordionBody/>}
         </div>
 
