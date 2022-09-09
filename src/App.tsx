@@ -1,13 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import './App.css';
-/*import Accordion from './components/Accordion/Accordion';
-import {Rating} from "./components/Rating/Rating";*/
+/*import Accordion from './components/Accordion/Accordion';*/
+import {Rating, ratingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import {UnAccordion} from "./components/AccSelfContr/UnAccordion";
 import {UnRating} from "./components/UnConrtRating/UnRating";
 
 function App() {
+
+
+    let [ratingValue, setRating] = useState <ratingValueType>(0)
+
 
     return (
         <div className={"App1"}>
@@ -16,13 +20,11 @@ function App() {
             Article 1
             <Rating value={3}/>
             <Accordion titleValue={"Menu"} collapsed = {true}/>
-            <Accordion titleValue={"Users"} collapsed = {false}/>
+            <Accordion titleValue={"Users"} collapsed = {false}/>*/}
             Article 2
-            <Rating value={0}/>
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={4}/>
-            <Rating value={5}/>*/}
+
+            <Rating value={ratingValue} onClick={setRating}/>
+
             <OnOff/>
             <UnAccordion titleValue={"Menu"}/>
             <UnAccordion titleValue={"Users"}/>

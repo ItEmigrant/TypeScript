@@ -9,33 +9,37 @@ export function UnRating() {
 
     let [selected, setSelected] = useState(0)
 
+    console.log(selected)
+
     return (
+
         <div>
 
-            <Star selected={selected > 0} setSelected={setSelected} value={1}/>
+            <Star selected={selected > 0} setSelected={()=>{setSelected(1)}} />
 
-            <Star selected={selected > 1} setSelected={setSelected} value={2}/>
+            <Star selected={selected > 1} setSelected={()=>{setSelected(2)}} />
 
-            <Star selected={selected > 2} setSelected={setSelected} value={3}/>
+            <Star selected={selected > 2} setSelected={()=>{setSelected(3)}} />
 
-            <Star selected={selected > 3} setSelected={setSelected} value={4}/>
+            <Star selected={selected > 3} setSelected={()=>{setSelected(4)}} />
 
-            <Star selected={selected > 4} setSelected={setSelected} value={5}/>
+            <Star selected={selected > 4} setSelected={()=>{setSelected(5)}} />
 
         </div>
+
     )
 
 }
 
 type StarPropsType = {
     selected: boolean
-    value: 1|2|3|4|5
-    setSelected: (value: number)=> void
+
+    setSelected: () => void
 }
 
 function Star(props: StarPropsType) {
-
-   return  <span onClick={()=>{props.setSelected(props.value)}}> {props.selected ? <b>star</b> : "star"}
+    return <span onClick={() => {props.setSelected()}}>
+       {props.selected ? <b>star </b> : "star "}
     </span>
 }
 
