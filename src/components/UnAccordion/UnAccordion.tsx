@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 
-type AccordionPropsType = {
+type AccordionPropsType1 = {
     titleValue: string
     //collapsed: boolean
 }
 
-export function UnAccordion (props: AccordionPropsType) {
+export function UnAccordion (props: AccordionPropsType1) {
     console.log("Accordion rendering")
 
     let [collapsed, setCollapsed] = useState(true);
