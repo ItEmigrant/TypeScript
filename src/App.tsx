@@ -9,6 +9,7 @@ import {UnRating} from "./components/UnConrtRating/UnRating";
 import {Accordion} from "./components/Accordion/Accordion";
 import {UnOnOf} from "./components/UnOnOff/UnOnOF";
 import {OnOf} from "./components/UnOnOff/OnOF";
+import {Input} from "./components/input/TrackInput";
 
 
 function App() {
@@ -40,6 +41,8 @@ function App() {
 
             <UnOnOf onChange={setOnValue}/> {onValue.toString()}
             <OnOf OnValue={onValue} setOnValue={setOnValue}/>
+
+            <Input/>
         </div>
     );
 
