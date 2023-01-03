@@ -10,6 +10,7 @@ import {Accordion} from "./components/Accordion/Accordion";
 import {UnOnOf} from "./components/UnOnOff/UnOnOF";
 import {OnOf} from "./components/UnOnOff/OnOF";
 import {Input} from "./components/input/TrackInput";
+import {ControlledInput} from "./components/input/controlledInput";
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
             <OnOf OnValue={onValue} setOnValue={setOnValue}/>
 
             <Input/>
+            <ControlledInput/>
         </div>
     );
 
