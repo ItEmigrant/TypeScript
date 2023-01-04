@@ -19,6 +19,10 @@ function App() {
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true);
     let [accordionMenuCollapsed, setMenuAccordionCollapsed] = useState<boolean>(true);
     let [onValue, setOnValue] = useState<boolean>(false)
+
+    const onItemClick = () => {
+        console.log('same item was clicked')
+    }
     return (
         <div className={"App1"}>
 
@@ -32,13 +36,20 @@ function App() {
             <UnAccordion titleValue={"Users"}/>
 
 
-           <Accordion titleValue={"Menu"}
-                      collapsed={accordionMenuCollapsed}
-                       onChange={() => {setMenuAccordionCollapsed(!accordionMenuCollapsed)}}/>
+            <Accordion titleValue={"Menu"}
+                       collapsed={accordionMenuCollapsed}
+                       onChange={() => {
+                           setMenuAccordionCollapsed(!accordionMenuCollapsed)
+                       }} items={[]} onClick={onItemClick}/>
 
             <Accordion titleValue={"Users"}
                        collapsed={accordionCollapsed}
-                       onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
+                       onChange={() => {
+                           setAccordionCollapsed(!accordionCollapsed)
+                       }} items={[{title: 'Alisa', value: 1},
+                {title: 'Bogdan', value: 2},
+                {title: 'Artur', value: 3},
+                {title: 'LUDA', value: 4}]} onClick={onItemClick}/>
 
             <UnOnOf onChange={setOnValue}/> {onValue.toString()}
             <OnOf OnValue={onValue} setOnValue={setOnValue}/>
