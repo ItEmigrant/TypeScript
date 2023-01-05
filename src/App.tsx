@@ -11,6 +11,7 @@ import {UnOnOf} from "./components/UnOnOff/UnOnOF";
 import {OnOf} from "./components/UnOnOff/OnOF";
 import {Input} from "./components/input/TrackInput";
 import {ControlledInput} from "./components/input/controlledInput";
+import {Select} from "./components/Selected/Select";
 
 
 function App() {
@@ -20,8 +21,8 @@ function App() {
     let [accordionMenuCollapsed, setMenuAccordionCollapsed] = useState<boolean>(true);
     let [onValue, setOnValue] = useState<boolean>(false)
 
-    const onItemClick = () => {
-        console.log('same item was clicked')
+    const onItemClick = (id: number) => {
+        alert(`Hello users ${id} !!!`)
     }
     return (
         <div className={"App1"}>
@@ -46,7 +47,8 @@ function App() {
                        collapsed={accordionCollapsed}
                        onChange={() => {
                            setAccordionCollapsed(!accordionCollapsed)
-                       }} items={[{title: 'Alisa', value: 1},
+                       }} items={[
+                {title: 'Alisa', value: 1},
                 {title: 'Bogdan', value: 2},
                 {title: 'Artur', value: 3},
                 {title: 'LUDA', value: 4}]} onClick={onItemClick}/>
@@ -56,6 +58,13 @@ function App() {
 
             <Input/>
             <ControlledInput/>
+            <Select value={"Names"} onChange={()=>{}}
+                items={[
+                {title: 'Alisa', value: 1},
+                {title: 'Bogdan', value: 2},
+                {title: 'Artur', value: 3},
+                {title: 'LUDA', value: 4}]}/>
+
         </div>
     );
 
