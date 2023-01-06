@@ -24,6 +24,9 @@ function App() {
     const onItemClick = (id: number) => {
         alert(`Hello users ${id} !!!`)
     }
+    const [value, setValue] = useState(4)
+
+
     return (
         <div className={"App1"}>
 
@@ -58,12 +61,13 @@ function App() {
 
             <Input/>
             <ControlledInput/>
-            <Select value={"Names"} onChange={()=>{}}
-                items={[
-                {title: 'Alisa', value: 1},
-                {title: 'Bogdan', value: 2},
-                {title: 'Artur', value: 3},
-                {title: 'LUDA', value: 4}]}/>
+            <Select value={value} name={"Names:"} onChange={setValue}
+                    items={[
+                        {title: 'Alisa', value: 1},
+                        {title: 'Bogdan', value: 2},
+                        {title: 'Artur', value: 3},
+                        {title: 'LUDA', value: 4}
+                    ]}/>
 
         </div>
     );

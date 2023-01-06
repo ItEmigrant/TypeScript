@@ -1,0 +1,18 @@
+.select span.main {
+    border: solid 1px black;
+    display: inline-block;
+    min-width: 64px;
+
+}
+
+.items {
+    padding: 5px;
+    position: absolute;
+    border: solid 1px black;
+}
+
+.item.selected {
+    background-color: dodgerblue;
+    color: white;
+
+}
