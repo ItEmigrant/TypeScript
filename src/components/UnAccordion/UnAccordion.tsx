@@ -1,33 +1,17 @@
 import React, {useReducer} from "react";
+import {reducerUnAccording} from "./ReducerUnAccording";
 
 type AccordionPropsType1 = {
     titleValue: string
     //collapsed: boolean
 }
 
-type reducerActionType = {
-    type: "TOGGLE-COLLAPSED"
-
-}
-
-
-const reducerUnAccording = (state: boolean, action: reducerActionType) => {
-
-    switch (action.type) {
-        case "TOGGLE-COLLAPSED":
-            return !state;
-
-        default:
-            return state;
-    }
-
-}
 
 export function UnAccordion(props: AccordionPropsType1) {
     console.log("Accordion rendering")
 
     /* let [collapsed, setCollapsed] = useState(true);*/
-    let [collapsed, dispatch] = useReducer(reducerUnAccording, true);
+    let [state, dispatch] = useReducer(reducerUnAccording, {collapsed:true});
 
     return <div>
         <AccordionTitle title={props.titleValue} onClick={() => {
@@ -36,7 +20,7 @@ export function UnAccordion(props: AccordionPropsType1) {
         }}/>
 
 
-        {!collapsed && <AccordionBody/>}
+        {!state.collapsed && <AccordionBody/>}
     </div>
 
 }
