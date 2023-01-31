@@ -12,6 +12,7 @@ import {OnOf} from "./components/UnOnOff/OnOF";
 import {Input} from "./components/input/TrackInput";
 import {ControlledInput} from "./components/input/controlledInput";
 import {Select} from "./components/Selected/Select";
+import {Example1} from "./components/reactMemo";
 
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
                         {title: 'Artur', value: 3},
                         {title: 'LUDA', value: 4}
                     ]}/>
+            <Example1/>
 
         </div>
     );
