@@ -13,7 +13,7 @@ import {Input} from "./components/input/TrackInput";
 import {ControlledInput} from "./components/input/controlledInput";
 import {Select} from "./components/Selected/Select";
 import {Example1} from "./components/reactMemo";
-import {ReactMemoExample} from "./components/ReactMemo/reactMemo";
+import { Example2helpMemo, ReactMemoExample} from "./components/ReactMemo/reactMemo";
 
 
 function App() {
@@ -67,6 +67,8 @@ function App() {
 
             <Example1/>
 
+            <Example2helpMemo/>
+
             <ReactMemoExample/>
 
             <Select value={value} name={"Names:"} onChange={setValue}
@@ -76,6 +78,7 @@ function App() {
                         {title: 'Artur', value: 3},
                         {title: 'LUDA', value: 4}
                     ]}/>
+
 
         </div>
     );

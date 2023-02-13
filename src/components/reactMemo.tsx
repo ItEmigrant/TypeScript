@@ -23,7 +23,7 @@ export const Example1 = () => {
     const CountPlus =()=> setCounter(counter+1);
 
     const addUsers =()=> {
-    const newUser = [...users, 'XXX' + new Date().getDate()]
+    const newUser = [...users, 'Bogdan' + new Date().getDate()]
 
         setUsers(newUser);
     }

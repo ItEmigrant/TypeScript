@@ -5,7 +5,7 @@ export const ReactMemoExample = () => {
     const [a, setA] = useState<number>(3);
     const [b, setB] = useState<number>(3);
 
-    let resultA: number;
+    let resultA:number;
     let resultB = 1;
 
     resultA = useMemo(() => {
@@ -14,8 +14,7 @@ export const ReactMemoExample = () => {
             let fake = 0;
             while (fake < 100000000) {
                 fake++;
-                const fakeValue = Math.random();
-                console.log(fakeValue)
+                /*const fakeValue = Math.random();*/
             }
             tempResultA *= i;
         }
@@ -46,6 +45,40 @@ export const ReactMemoExample = () => {
         </div>
 
     </>
+
+};
+
+
+const UsersXX = (props: { users: Array<string> }) => {
+    console.log("USERS XX")
+    return <div>{props.users.map((u, i) => <div key={i}>{u}</div>)
+    }
+    </div>
+}
+
+const Users = React.memo(UsersXX);
+
+export const Example2helpMemo = () => {
+    console.log(":)")
+
+    const [counter, setCounter] = useState(0);
+    const [users, setUsers] = useState(["Bob", "Artur", "Sasha"]);
+
+
+
+    const newArray = useMemo(()=>{
+        return users.filter(u=> u.toLowerCase().indexOf("a")>-1)},[users])
+
+    return (
+        <>
+            <button onClick={()=>setCounter(counter+1)}>+</button>
+            <button onClick={()=>setUsers([...users, "Ala" + new Date().getDate()])}>addUser</button>
+            {counter}
+            <Users users={newArray}/>
+
+        </>
+
+    );
 
 };
 
