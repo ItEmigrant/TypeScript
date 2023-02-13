@@ -13,6 +13,7 @@ import {Input} from "./components/input/TrackInput";
 import {ControlledInput} from "./components/input/controlledInput";
 import {Select} from "./components/Selected/Select";
 import {Example1} from "./components/reactMemo";
+import {ReactMemoExample} from "./components/ReactMemo/reactMemo";
 
 
 function App() {
@@ -61,7 +62,13 @@ function App() {
             <OnOf OnValue={onValue} setOnValue={setOnValue}/>
 
             <Input/>
+
             <ControlledInput/>
+
+            <Example1/>
+
+            <ReactMemoExample/>
+
             <Select value={value} name={"Names:"} onChange={setValue}
                     items={[
                         {title: 'Alisa', value: 1},
@@ -69,7 +76,6 @@ function App() {
                         {title: 'Artur', value: 3},
                         {title: 'LUDA', value: 4}
                     ]}/>
-            <Example1/>
 
         </div>
     );
