@@ -43,7 +43,6 @@ export const ReactMemoExample = () => {
         <div>
             result for b = {resultB}
         </div>
-
     </>
 
 };

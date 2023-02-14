@@ -24,7 +24,7 @@ export function Rating(props: RatingPropsType) {
 
 }
 
-type StarPropsType = {
+export type StarPropsType = {
     selected: boolean
     onClick: (value: ratingValueType) => void
     value: ratingValueType
