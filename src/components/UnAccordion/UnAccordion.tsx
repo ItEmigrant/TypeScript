@@ -11,7 +11,7 @@ export function UnAccordion(props: AccordionPropsType1) {
     console.log("Accordion rendering")
 
     /* let [collapsed, setCollapsed] = useState(true);*/
-    let [state, dispatch] = useReducer(reducerUnAccording, {collapsed:true});
+    let [state, dispatch] = useReducer(reducerUnAccording, {collapsed:false});
 
     return <div>
         <AccordionTitle title={props.titleValue} onClick={() => {
