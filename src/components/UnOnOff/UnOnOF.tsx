@@ -3,12 +3,14 @@ import React, {useState} from 'react';
 
 type PropsOnOfType = {
     onChange: (onValue:boolean)=>void
+    defaultOn?:boolean
+    defaultOf?:boolean
 }
 
 
 export const UnOnOf = (props:PropsOnOfType) => {
 
-    let [onValue, setOnValue] = useState(true)
+    let [onValue, setOnValue] = useState(props.defaultOn ? props.defaultOn : false)
 
     const On = {
         marginRight: "3px",
