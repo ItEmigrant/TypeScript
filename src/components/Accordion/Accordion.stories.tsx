@@ -4,19 +4,18 @@ import {action} from "@storybook/addon-actions";
 import {Accordion} from "./Accordion";
 import {ComponentStory} from "@storybook/react";
 
-const colorsCategory = {
+const getColorsCategory = (categoryName: string)=> ({
     table: {
-        category: "colors"
+        category: categoryName
     }
-}
+})
 
 export default {
     title: 'Accordion',
     component: Accordion,
     argTypes: {
         color: {
-            control: 'color',
-            ...colorsCategory
+          ...getColorsCategory('color')
 
         }
     }
