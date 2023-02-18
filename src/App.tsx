@@ -33,7 +33,7 @@ function App() {
         <div className={"App1"}>
 
 
-            <UnRating/>
+            <UnRating onChange={()=>{}}/>
 
             <Rating value={ratingValue} onClick={setRating}/>
 
