@@ -12,8 +12,9 @@ import {OnOf} from "./components/UnOnOff/OnOF";
 import {Input} from "./components/input/TrackInput";
 import {ControlledInput} from "./components/input/controlledInput";
 import {Select} from "./components/Selected/Select";
-import {Example1} from "./components/reactMemo";
-import { Example2helpMemo, ReactMemoExample} from "./components/ReactMemo/reactMemo";
+import {Example1} from "./components/useMemo/reactMemo";
+import {Example2helpMemo, LikeUseCallback, ReactMemoExample} from "./components/ReactMemo/reactMemo";
+
 
 
 function App() {
@@ -33,7 +34,8 @@ function App() {
         <div className={"App1"}>
 
 
-            <UnRating onChange={()=>{}}/>
+            <UnRating onChange={() => {
+            }}/>
 
             <Rating value={ratingValue} onClick={setRating}/>
 
@@ -71,6 +73,8 @@ function App() {
 
             <ReactMemoExample/>
 
+            <LikeUseCallback/>
+
             <Select value={value} name={"Names:"} onChange={setValue}
                     items={[
                         {title: 'Alisa', value: 1},
@@ -78,7 +82,6 @@ function App() {
                         {title: 'Artur', value: 3},
                         {title: 'LUDA', value: 4}
                     ]}/>
-
 
         </div>
     );
