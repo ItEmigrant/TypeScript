@@ -5,7 +5,7 @@ export const ReactMemoExample = () => {
     const [a, setA] = useState<number>(3);
     const [b, setB] = useState<number>(3);
 
-    let resultA:number;
+    let resultA: number;
     let resultB = 1;
 
     resultA = useMemo(() => {
@@ -63,13 +63,14 @@ export const Example2helpMemo = () => {
     const [counter, setCounter] = useState(0);
     const [users, setUsers] = useState(["Bob", "Artur", "Sasha"]);
 
-    const newArray = useMemo(()=>{
-        return users.filter(u=> u.toLowerCase().indexOf("a")>-1)},[users])
+    const newArray = useMemo(() => {
+        return users.filter(u => u.toLowerCase().indexOf("a") > -1)
+    }, [users])
 
     return (
         <>
-            <button onClick={()=>setCounter(counter+1)}>+</button>
-            <button onClick={()=>setUsers([...users, "Ala" + new Date().getDate()])}>addUser</button>
+            <button onClick={() => setCounter(counter + 1)}>+</button>
+            <button onClick={() => setUsers([...users, "Ala" + new Date().getDate()])}>addUser</button>
             {counter}
             <Users users={newArray}/>
 
@@ -79,34 +80,4 @@ export const Example2helpMemo = () => {
 
 };
 
-export const  LikeUseCallback = () => {
-    console.log(":)")
-
-    const [counter, setCounter] = useState(0);
-    const [Books, setBooks] = useState(["React", "Js", "CSS"]);
-
-    const newArray = useMemo(()=>{
-        return Books.filter(b=> b.toLowerCase().indexOf("c")>-1)},[Books])
-
-    // @ts-ignore
-    return <>
-            <button onClick={()=>setCounter(counter+1)}>+</button>
-            <button onClick={()=>setBooks([...Books, "C++" + new Date().getDate()])}>addBook</button>
-            {counter}
-            <Book books={newArray}/>
-    </>
-
-}
-
-const BooksXX = (props: { books: Array<string> }) => {
-    console.log("Books secret")
-    return <div>
-
-        {
-        props.books.map((books, i) => <div key={i}>{books}</div>)
-    }
-    </div>
-}
-
-export const Book = React.memo(BooksXX);
 

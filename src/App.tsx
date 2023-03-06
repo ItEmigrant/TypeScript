@@ -13,7 +13,8 @@ import {Input} from "./components/input/TrackInput";
 import {ControlledInput} from "./components/input/controlledInput";
 import {Select} from "./components/Selected/Select";
 import {Example1} from "./components/useMemo/reactMemo";
-import {Example2helpMemo, LikeUseCallback, ReactMemoExample} from "./components/ReactMemo/reactMemo";
+import {Example2helpMemo, ReactMemoExample} from "./components/ReactMemo/reactMemo";
+import {LikeUseCallback} from "./components/useCallback/useCallback";
 
 
 
