@@ -18,6 +18,7 @@ import {LikeUseCallback} from "./components/useCallback/useCallback";
 
 
 
+
 function App() {
 
     let [ratingValue, setRating] = useState<ratingValueType>(0)
@@ -69,6 +70,8 @@ function App() {
             <ControlledInput/>
 
             <Example1/>
+
+
 
             <Example2helpMemo/>
 
