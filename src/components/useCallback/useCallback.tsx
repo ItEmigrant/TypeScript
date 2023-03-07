@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useCallback, useState} from "react";
 
 export const LikeUseCallback = () => {
     console.log(":)")
@@ -7,15 +7,20 @@ export const LikeUseCallback = () => {
     const [Books, setBooks] = useState(["React", "Js", "CSS"]);
 
 
-    const addBook = () => {
-        setBooks([...Books, "C++" + new Date().getDate()])
-    }
-    // @ts-ignore
+    /*const memorizedAdBook1 = useMemo(()=>{
+        return () => {
+            setBooks([...Books, "C++" + new Date().getDate()])
+        }}, [Books]);*/
+
+    const memorizedAdBook = useCallback(()=>{
+            setBooks([...Books, "C++" + new Date().getDate()])
+        }, [Books]);
+
     return <>
         <button onClick={() => setCounter(counter + 1)}>+</button>
 
         {counter}
-        <Book addBook={addBook}/>
+        <Book addBook={memorizedAdBook}/>
     </>
 
 }
