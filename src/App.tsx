@@ -15,6 +15,7 @@ import {Select} from "./components/Selected/Select";
 import {Example1} from "./components/useMemo/reactMemo";
 import {Example2helpMemo, ReactMemoExample} from "./components/useReactMemo/useMemo";
 import {LikeUseCallback} from "./components/useCallback/useCallback";
+import {ExampleUseEffect} from "./components/useEffect/useEffect.stories";
 
 
 
@@ -70,6 +71,7 @@ function App() {
             <ControlledInput/>
 
             <Example1/>
+            <ExampleUseEffect/>
 
 
 
