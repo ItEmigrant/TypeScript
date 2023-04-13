@@ -16,6 +16,7 @@ import {Example1} from "./components/useMemo/reactMemo";
 import {Example2helpMemo, ReactMemoExample} from "./components/useReactMemo/useMemo";
 import {LikeUseCallback} from "./components/useCallback/useCallback";
 import {ExampleUseEffect, SetTimeoutExample} from "./components/useEffect/useEffect.stories";
+import {ClockExample} from "./components/useEffect/clockProect.stories";
 
 
 
@@ -73,6 +74,7 @@ function App() {
             <Example1/>
             <ExampleUseEffect/>
             <SetTimeoutExample/>
+            <ClockExample/>
 
 
 

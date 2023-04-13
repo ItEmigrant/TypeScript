@@ -41,14 +41,14 @@ export const SetTimeoutExample = () => {
     console.log("Example")
 
 
-    useEffect(() => {
+   /* useEffect(() => {
 
         setInterval(() => {
             console.log('setInterval')
            setCounter((state)=>state+1)
 
         }, 2000)
-    }, []);
+    }, []);*/
 
 
     return <>
