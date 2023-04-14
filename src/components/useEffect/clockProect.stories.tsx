@@ -2,38 +2,43 @@ import React, {useEffect, useState} from "react";
 
 
 export default {
-    title: "Clock demo",
-}
+    title: "Clock demo"
+};
 
-export const ClockExample = () => {
-    let a = new Date();
+type ClockExamplePropsType = {}
 
-   const [time, setTime] = useState(a.getTime())
+
+export const ClockExample = (props: ClockExamplePropsType) => {
+
+    const [time, setTime] = useState(new Date())
     console.log("Example")
 
-    useEffect(()=>{
-        console.log("jjj")
-        setInterval(()=>{
-            setTime((time)=>time+1)
+    useEffect(() => {
+        console.log("render")
+        setInterval(() => {
+            console.log('TIME')
+            setTime(new Date())
         }, 1000)
-    })
+    }, []);
 
+    function get2digitalString(num: number) {
+        return num < 10 ? "0" + num : num
+    }
 
-    /*useEffect(() => {
-
-        /!*setInterval(() => {
-            console.log('setInterval')
-          setSec((sec)=>sec+0.001)
-        }, 1)
-    },[seconds]);*!/*/
-        let seconds = a.getSeconds()
+    const seconds = get2digitalString(time.getSeconds())
+    const minutes = get2digitalString(time.getMinutes())
+    const hours = get2digitalString(time.getHours())
 
     return <>
-        <div>Year: {a.getFullYear()} </div>
-        <div>Month: {a.getMonth()} </div>
-        <div>Date: {a.getDate()} </div>
+        <div>Year: {time.getFullYear()} </div>
+        <div>Month: {time.getMonth()} </div>
+        <div>Date: {time.getDate()} </div>
         {/*<div>CLOCK - {a.getHours()}:{a.getMinutes()}:{seconds} </div>*/}
-        <h1>CLOCK - {a.getHours()}:{a.getMinutes()}:{seconds} </h1>
+        <h1>CLOCK -
+            {hours}:
+            {minutes}:
+            {seconds}
+        </h1>
 
     </>
 
