@@ -1,12 +1,17 @@
 import React, {useEffect, useState} from "react";
-import s from '../Clock/clock.module.css'
+import {DigitalView} from "./DigitalClockComponent/DigitalView";
+import {AnalogView} from "./AnalogClockComponent/AnalogView";
 
-function get2digitalString(num: number) {
+export function get2digitalString(num: number) {
     return num < 10 ? "0" + num : num
 }
 
+export type ClockViewPropsType = {
+    time: Date
+}
+
 type ClockPropsType = {
-    mode: string
+    mode?: 'digital' | 'analog'
 }
 export const Clock = (props: ClockPropsType) => {
 
@@ -24,16 +29,22 @@ export const Clock = (props: ClockPropsType) => {
         }
     }, []);
 
-    return <>
-        <div>Year: {time.getFullYear()} </div>
-        <div>Month: {time.getMonth()} </div>
-        <div>Date: {time.getDate()} </div>
-        <h1 className={s.clock}>CLOCK -
-            {get2digitalString(time.getHours())}:
-            {get2digitalString(time.getMinutes())}:
-            {get2digitalString(time.getSeconds())}
-        </h1>
 
+    let View;
+    switch (props.mode) {
+        case "analog" :
+            View = <AnalogView time={time}/>
+            break;
+
+        case "digital" :
+        default:
+            View = <DigitalView time={time}/>
+    }
+
+    return <>
+        {View}
     </>
 
 }
+
+
