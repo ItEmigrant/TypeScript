@@ -1,17 +1,14 @@
 import React, {useEffect, useState} from "react";
-
-
-export default {
-    title: "Clock demo"
-};
-
-type ClockExamplePropsType = {}
+import s from '../Clock/clock.module.css'
 
 function get2digitalString(num: number) {
     return num < 10 ? "0" + num : num
 }
 
-export const ClockExample = (props: ClockExamplePropsType) => {
+type ClockPropsType = {
+    mode: string
+}
+export const Clock = (props: ClockPropsType) => {
 
     const [time, setTime] = useState(new Date())
     console.log("Example")
@@ -31,8 +28,7 @@ export const ClockExample = (props: ClockExamplePropsType) => {
         <div>Year: {time.getFullYear()} </div>
         <div>Month: {time.getMonth()} </div>
         <div>Date: {time.getDate()} </div>
-        {/*<div>CLOCK - {a.getHours()}:{a.getMinutes()}:{seconds} </div>*/}
-        <h1>CLOCK -
+        <h1 className={s.clock}>CLOCK -
             {get2digitalString(time.getHours())}:
             {get2digitalString(time.getMinutes())}:
             {get2digitalString(time.getSeconds())}
