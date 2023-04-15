@@ -7,6 +7,9 @@ export default {
 
 type ClockExamplePropsType = {}
 
+function get2digitalString(num: number) {
+    return num < 10 ? "0" + num : num
+}
 
 export const ClockExample = (props: ClockExamplePropsType) => {
 
@@ -15,19 +18,14 @@ export const ClockExample = (props: ClockExamplePropsType) => {
 
     useEffect(() => {
         console.log("render")
-        setInterval(() => {
+        const intervalID = setInterval(() => {
             console.log('TIME')
             setTime(new Date())
-        }, 1000)
+        }, 1000);
+        return () => {
+            clearInterval(intervalID)
+        }
     }, []);
-
-    function get2digitalString(num: number) {
-        return num < 10 ? "0" + num : num
-    }
-
-    const seconds = get2digitalString(time.getSeconds())
-    const minutes = get2digitalString(time.getMinutes())
-    const hours = get2digitalString(time.getHours())
 
     return <>
         <div>Year: {time.getFullYear()} </div>
@@ -35,9 +33,9 @@ export const ClockExample = (props: ClockExamplePropsType) => {
         <div>Date: {time.getDate()} </div>
         {/*<div>CLOCK - {a.getHours()}:{a.getMinutes()}:{seconds} </div>*/}
         <h1>CLOCK -
-            {hours}:
-            {minutes}:
-            {seconds}
+            {get2digitalString(time.getHours())}:
+            {get2digitalString(time.getMinutes())}:
+            {get2digitalString(time.getSeconds())}
         </h1>
 
     </>
