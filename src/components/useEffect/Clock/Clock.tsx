@@ -2,9 +2,6 @@ import React, {useEffect, useState} from "react";
 import {DigitalView} from "./DigitalClockComponent/DigitalView";
 import {AnalogView} from "./AnalogClockComponent/AnalogView";
 
-export function get2digitalString(num: number) {
-    return num < 10 ? "0" + num : num
-}
 
 export type ClockViewPropsType = {
     time: Date

@@ -1,12 +1,14 @@
 import s from "../clock.module.css";
 import React from "react";
-import {ClockViewPropsType, get2digitalString} from "../Clock";
+import {ClockViewPropsType} from "../Clock";
+import {DataForClock} from "../dataForClock";
 
+export function get2digitalString(num: number) {
+    return num < 10 ? "0" + num : num
+}
 export const DigitalView = (props: ClockViewPropsType) => {
     return <div>
-        <div>Year: {props.time.getFullYear()} </div>
-        <div>Month: {props.time.getMonth()} </div>
-        <div>Date: {props.time.getDate()} </div>
+       <DataForClock time={props.time}/>
         <h1 className={s.clock}>CLOCK -
             {get2digitalString(props.time.getHours())}:
             {get2digitalString(props.time.getMinutes())}:
