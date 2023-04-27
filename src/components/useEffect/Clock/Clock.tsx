@@ -2,11 +2,9 @@ import React, {useEffect, useState} from "react";
 import {DigitalView} from "./DigitalClockComponent/DigitalView";
 import {AnalogView} from "./AnalogClockComponent/AnalogView";
 
-
 export type ClockViewPropsType = {
     time: Date
 }
-
 type ClockPropsType = {
     mode?: 'digital' | 'analog'
 }
@@ -18,7 +16,7 @@ export const Clock = (props: ClockPropsType) => {
     useEffect(() => {
         console.log("render")
         const intervalID = setInterval(() => {
-            console.log('TIME')
+            console.log('TIME rendered')
             setTime(new Date())
         }, 1000);
         return () => {
